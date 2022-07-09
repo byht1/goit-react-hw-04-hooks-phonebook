@@ -44,10 +44,6 @@ export default function App() {
   }
 
   function deleteContacts(event) {
-    const index = contacts.findIndex(x => x.id === event.target.name);
-
-    // Перевірки на -1 не має так як це не можливо!!!! (сподіваюсь)
-
     setContacts(prev => prev.filter(x => x.id !== event.target.name));
   }
 
@@ -63,11 +59,7 @@ export default function App() {
         <DivList>
           <h2>Contacts</h2>
           <Filter onChange={onCahangeFilter} />
-          <ContactList
-            fillter={fillter}
-            contacts={contacts}
-            deleteContacts={deleteContacts}
-          />
+          <ContactList contacts={contacts} deleteContacts={deleteContacts} />
         </DivList>
       </Containet>
     </Section>
