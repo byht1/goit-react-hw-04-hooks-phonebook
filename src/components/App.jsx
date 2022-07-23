@@ -59,7 +59,10 @@ export default function App() {
         <DivList>
           <h2>Contacts</h2>
           <Filter onChange={onCahangeFilter} />
-          <ContactList contacts={contacts} deleteContacts={deleteContacts} />
+          <ContactList
+            contacts={fillter ? fillter : contacts}
+            deleteContacts={deleteContacts}
+          />
         </DivList>
       </Containet>
     </Section>
